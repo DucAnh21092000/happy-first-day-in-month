@@ -5,21 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
+    <meta name="Description"
+        content="Chúc bé Hiền yêu một ngày 1/6 thật ý nghĩa, luôn vui vẻ và hạnh phúc. Đây là món quà nhỏ dành cho người anh yêu thương nhất." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Title</title>
+    <title>Chúc Mừng Ngày 1/6 - Dành Cho Bé Yêu 💕</title>
 </head>
 
 <body>
     <main class="hero">
         <div class="gif-container">
             <div class="gif-mess">Nhấn vào đây nào</div>
-            <img class="gif" src="assets/image/0699ec86bb04dd902d63b12a40f1c30f.gif" alt="Background Image"
-                class="background-image">
+            <img onclick="showHeroCard()" class="gif" src="assets/image/0699ec86bb04dd902d63b12a40f1c30f.gif"
+                alt="Background Image" class="background-image">
         </div>
-        <div class="hero-card position-relative">
+        <div class="hero-card position-relative d-none">
             <div class="sparkle-layer" aria-hidden="true">
                 <span class="sparkle" style="top: 15%; left: 18%;"></span>
                 <span class="sparkle" style="top: 20%; left: 72%; animation-delay: 0.4s"></span>
@@ -49,6 +50,14 @@
     </main>
 
     <script>
+        const showHeroCard = () => {
+            const gifContainer = document.querySelector(".gif-container");
+            const heroCard = document.querySelector(".hero-card");
+            gifContainer.classList.add("hide");
+            heroCard.classList.remove("d-none");
+            heroCard.classList.add("animate-card");
+        };
+
         document.getElementById("surpriseButton").addEventListener("click", function () {
             const button = document.getElementById("surpriseButton");
             const buttonRect = button.getBoundingClientRect();
